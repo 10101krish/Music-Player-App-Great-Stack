@@ -1,0 +1,158 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(252, 142, 197, 1.000) 0.000%, rgba(255, 141, 211, 1.000) 25.000%, rgba(255, 161, 216, 1.000) 50.000%, rgba(255, 193, 210, 1.000) 75.000%, rgba(255, 224, 195, 1.000) 100.000%);
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-button-container {
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-button-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px 0px 3px 1px rgb(230, 62, 98, 0.25);
+}
+
+.nav-button-container button:hover {
+    box-shadow: 0px 0px 3px 1px rgb(230, 62, 98, 0.75);
+}
+
+.nav-button-container button i {
+    font-size: 15px;
+    line-height: 0;
+    vertical-align: middle;
+    color: #e63e62;
+}
+
+.song-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.song-icon-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border: 5px solid white;
+    border-radius: 100%;
+}
+
+.song-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Segoe UI';
+}
+
+.song-info-container #song-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.song-info-container #song-artist {
+    font-size: 15px;
+}
+
+.song-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 8px;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #e63e62;
+    height: 5px;
+    border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #ff4081;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-top: -7px;
+    cursor: pointer;
+    border: 4px solid white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.song-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-button-container button {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 3px 1px rgb(230, 62, 98, 0.25);
+}
+
+.song-button-container button:hover {
+    box-shadow: 0px 0px 3px 1px rgb(230, 62, 98, 0.75);
+}
+
+.song-button-container button i {
+    font-size: 15px;
+    line-height: 0;
+    vertical-align: middle;
+    color: #e63e62;
+}
+
+.song-button-container button#pause-button {
+    width: 75px;
+    height: 75px;
+    background-color: #e63e62;
+}
+
+.song-button-container button#pause-button i {
+    color: white;
+    font-size: 20px;
+}

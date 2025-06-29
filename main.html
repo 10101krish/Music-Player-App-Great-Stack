@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+</head>
+
+<body>
+    <div class="card">
+        <div class="nav-button-container">
+            <button id="back-button">
+                <i class="fi fi-ss-angle-left"></i>
+            </button>
+            <button id="menu-button">
+                <i class="fi fi-br-menu-burger"></i>
+            </button>
+        </div>
+        <div class="song-icon-container">
+            <img src="" alt="Song Icon" id="song-icon">
+        </div>
+        <div class="song-info-container">
+            <div id="song-name">
+                N/A
+            </div>
+            <div id="song-artist">
+                N/A
+            </div>
+        </div>
+        <div class="song-container">
+            <audio id="song-audio"></audio>
+            <input type="range" name="song-seek" id="song-seek" min="0" max="177" value="0">
+        </div>
+        <div class="song-button-container">
+            <button id="previous-button">
+                <i class="fi fi-br-angle-double-small-left"></i>
+            </button>
+            <button id="pause-button">
+                <i class="fi fi-sr-play"></i>
+            </button>
+            <button id="next-button">
+                <i class="fi fi-br-angle-double-small-right"></i>
+            </button>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
