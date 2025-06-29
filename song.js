@@ -32,7 +32,7 @@ songAudio.ontimeupdate = () => {
 }
 
 songAudio.onended = async () => {
-    songIndex++;
+    songIndex = (songIndex + 1) % ncsTracks.length;
     await playMusic(songIndex);
 }
 
@@ -45,13 +45,13 @@ pauseButton.onclick = () => {
 }
 
 nextButton.onclick = async () => {
-    songIndex++;
+    songIndex = (songIndex + 1) % ncsTracks.length;
     await playMusic(songIndex);
 }
 
 async function handlePreviousButtonPress() {
     if (songAudio.currentTime < 2) {
-        songIndex--;
+        songIndex = (songIndex - 1 + ncsTracks.length) % ncsTracks.length;
         await playMusic(songIndex);
     }
     else
@@ -90,23 +90,25 @@ function updateSeeker(currentSongTime) {
     songSeek.value = currentSongTime;
 }
 
+function initializeSeeker() {
+    const songDuration = songAudio.duration;
+    songSeek.max = songDuration;
+    songSeek.value = 0;
+}
+
 async function playMusic(newSongIndex) {
     songIndex = newSongIndex;
 
     disbleButtons();
     await loadMusic();
+
     songAudio.onloadedmetadata = () => {
+        initializeSeeker();
         songAudio.play();
         songPaused = false;
         changePauseButtonIcon();
         enableButtons();
     }
-}
-
-function initializeSeeker() {
-    const songDuration = songAudio.duration;
-    songSeek.max = songDuration;
-    songSeek.value = 0;
 }
 
 async function loadMusic() {
@@ -117,12 +119,12 @@ async function loadMusic() {
 
     songPaused = true;
     changePauseButtonIcon();
-    disbleButtons();
+    // disbleButtons();
 
-    songAudio.onloadedmetadata = () => {
-        initializeSeeker();
-        enableButtons();
-    };
+    // songAudio.onloadedmetadata = () => {
+    //     initializeSeeker();
+    //     enableButtons();
+    // };
 }
 
 export async function loadInititalSetup() {
